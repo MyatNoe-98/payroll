@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+   
+   <class name="com.jcg.spring.hibernate.pojo.Salary" table="SALARY">
+        <id name="idsalary" type="int">
+         	<column name="idsalary" />
+         	<generator class="native" />
+        </id>
+        <property name="emp_id" type="int">
+         	<column name="emp_id" />
+        </property>
+        <property name="emp_name" type="java.lang.String">
+		 	<column name="emp_name"/>
+	    </property>
+		<property name="fromdate" type="java.lang.String">
+			<column name="fromdate"/>
+		</property>
+		<property name="todate" type="java.lang.String">
+			<column name="todate"/>
+		</property>
+		<property name="basicsalary" type="java.lang.Float">
+			<column name="basicsalary"/>
+		</property>
+		<property name="overtime" type="java.lang.Float">
+			<column name="overtime"/>
+		</property>
+		<property name="leave_amt" type="java.lang.Float">
+			<column name="leave_amt"/>
+		</property>
+		<property name="tax" type="java.lang.Float">
+			<column name="tax"/>
+		</property>
+		<property name="otherallowance" type="java.lang.Float">
+			<column name="otherallowance"/>
+		</property>
+		<property name="netpay" type="java.lang.Float">
+			<column name="netpay"/>
+		</property>
+   </class>
+
+</hibernate-mapping>

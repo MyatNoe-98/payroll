@@ -1,0 +1,48 @@
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd; right: -250px">
+ <!--   <a class="navbar-brand" href="#" style="width: 250px" >PAYROLL</a>-->
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown" >
+    <ul class="navbar-nav">
+      
+       <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Employee
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="viewemp">Employee List</a>
+          <a class="dropdown-item" href="viewuser">User List</a>
+          <a class="dropdown-item" href="newemp">New Employee</a>
+          <a class="dropdown-item" href="newuser">New User</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Activity
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+        <a class="dropdown-item" href="overtimelist">Overtime List</a>
+          <a class="dropdown-item" href="leavelist">Leave List</a>
+          <a class="dropdown-item" href="overtimeform">Overtime</a>
+          <a class="dropdown-item" href="leaveform">Leave</a>
+        </div>
+      </li>
+      
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Salary
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="calculate">Compute</a>
+          <a class="dropdown-item" href="viewsalary">Salary List</a>
+        </div>
+      </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+     <li>
+      <a href="/SpringMvcHibernate" class="btn btn-outline-primary my-2 my-sm-0" type="submit">Logout</a>
+      </li>
+    </ul>
+  </div>
+</nav>

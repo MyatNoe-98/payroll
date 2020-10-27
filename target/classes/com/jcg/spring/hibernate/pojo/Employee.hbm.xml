@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+   
+   <class name="com.jcg.spring.hibernate.pojo.Employee" table="EMPLOYEE">
+      <id name="emp_id" type="int">
+         <column name="emp_id" />
+         <generator class="native" />
+      </id>
+      <property name="emp_name" type="java.lang.String">
+         <column name="emp_name" />
+      </property>
+      <property name="NRC" type="java.lang.String">
+         <column name="NRC" />
+      </property>
+      <property name="phone" type="int">
+         <column name="phone" />
+      </property>
+      <property name="email" type="java.lang.String">
+         <column name="email" />
+      </property>
+      <property name="birthdate" type="java.lang.String">
+         <column name="birthdate" />
+      </property>
+      <property name="address" type="java.lang.String">
+         <column name="address" />
+      </property>
+      <property name="basicsalary" type="java.lang.Float">
+         <column name="basicsalary" />
+      </property>
+      <property name="marital" type="java.lang.String">
+         <column name="marital" />
+      </property>
+      <property name="children" type="java.lang.Integer">
+         <column name="children" />
+      </property>
+      <property name="parent" type="java.lang.Integer">
+         <column name="parent" />
+      </property>
+   </class>
+
+</hibernate-mapping>
+ 

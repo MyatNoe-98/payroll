@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+  
+    <!-- Configuring the JDBC connection -->
+   <bean id="dataSourceBean" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+      <property name="driverClassName" value="com.mysql.jdbc.Driver" />
+      <property name="url" value="jdbc:mysql://localhost:3306/springmvc" />
+      <property name="username" value="root" />
+      <property name="password" value="root123" />
+   </bean>
+   <bean id="sessionFactoryBean" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+      <property name="dataSource" ref="dataSourceBean" />
+      <property name="mappingResources">
+         <value>com/jcg/spring/hibernate/pojo/User.hbm.xml</value>
+      </property>
+      
+      <property name="hibernateProperties">
+         <props>
+            <prop key="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</prop>
+            <prop key="hibernate.show_sql">true</prop>
+         </props>
+      </property>
+   </bean>
+   <bean id="sessionFactoryBean1" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+      <property name="dataSource" ref="dataSourceBean" />
+      <property name="mappingResources">
+         <value>com/jcg/spring/hibernate/pojo/Employee.hbm.xml</value>
+      </property>
+      
+      <property name="hibernateProperties">
+         <props>
+            <prop key="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</prop>
+            <prop key="hibernate.show_sql">true</prop>
+         </props>
+      </property>
+   </bean>
+   <bean id="sessionFactoryBean2" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+      <property name="dataSource" ref="dataSourceBean" />
+      <property name="mappingResources">
+         <value>com/jcg/spring/hibernate/pojo/Overtime.hbm.xml</value>
+      </property>
+      
+      <property name="hibernateProperties">
+         <props>
+            <prop key="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</prop>
+            <prop key="hibernate.show_sql">true</prop>
+         </props>
+      </property>
+   </bean>
+   <bean id="sessionFactoryBean3" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+      <property name="dataSource" ref="dataSourceBean" />
+      <property name="mappingResources">
+         <value>com/jcg/spring/hibernate/pojo/Leaves.hbm.xml</value>
+      </property>
+      
+      <property name="hibernateProperties">
+         <props>
+            <prop key="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</prop>
+            <prop key="hibernate.show_sql">true</prop>
+         </props>
+      </property>
+   </bean>
+   <bean id="sessionFactoryBean4" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+      <property name="dataSource" ref="dataSourceBean" />
+      <property name="mappingResources">
+         <value>com/jcg/spring/hibernate/pojo/Salary.hbm.xml</value>
+      </property>
+      
+      <property name="hibernateProperties">
+         <props>
+            <prop key="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</prop>
+            <prop key="hibernate.show_sql">true</prop>
+         </props>
+      </property>
+   </bean>
+   
+   
+   
+   
+   
+   
+   <bean id="hibernateTemplateBean" class="org.springframework.orm.hibernate5.HibernateTemplate">
+      <property name="sessionFactory" ref="sessionFactoryBean" />
+   </bean>
+    <bean id="hibernateTemplateBean1" class="org.springframework.orm.hibernate5.HibernateTemplate">
+      <property name="sessionFactory" ref="sessionFactoryBean1" />
+   </bean> 
+   <bean id="hibernateTemplateBean2" class="org.springframework.orm.hibernate5.HibernateTemplate">
+      <property name="sessionFactory" ref="sessionFactoryBean2" />
+   </bean>
+   <bean id="hibernateTemplateBean3" class="org.springframework.orm.hibernate5.HibernateTemplate">
+      <property name="sessionFactory" ref="sessionFactoryBean3" />
+   </bean>
+   <bean id="hibernateTemplateBean4" class="org.springframework.orm.hibernate5.HibernateTemplate">
+      <property name="sessionFactory" ref="sessionFactoryBean4" />
+   </bean>
+     
+     
+     
+   <bean id="authenticateServiceBean" class="com.jcg.spring.hibernate.service.AuthService">
+      <property name="hibernateTemplate" ref="hibernateTemplateBean" />
+      <property name="template" ref="jt"></property>
+   </bean>
+    <bean id="authenticateServiceBean1" class="com.jcg.spring.hibernate.service.EmpShowService">
+      <property name="hibernateTemplate" ref="hibernateTemplateBean1" />
+      <property name="template" ref="jt"></property>
+   </bean>
+   <bean id="authenticateServiceBean2" class="com.jcg.spring.hibernate.service.Otservice">
+      <property name="hibernateTemplate" ref="hibernateTemplateBean2" />
+      <property name="template" ref="jt"></property>
+   </bean>
+   <bean id="authenticateServiceBean3" class="com.jcg.spring.hibernate.service.LeaveService">
+      <property name="hibernateTemplate" ref="hibernateTemplateBean3" />
+   </bean>
+   <bean id="authenticateServiceBean4" class="com.jcg.spring.hibernate.service.SalaryService">
+      <property name="hibernateTemplate" ref="hibernateTemplateBean4" />
+   </bean>
+   
+   
+   
+   
+   
+   <bean id="jt" class="org.springframework.jdbc.core.JdbcTemplate">
+<property name="dataSource" ref="dataSourceBean"></property>
+</bean> 
+   </beans>
